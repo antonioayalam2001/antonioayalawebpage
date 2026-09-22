@@ -1,4 +1,3 @@
-import {AboutMe} from "./AboutMe.jsx";
 import {Footer} from "./Footer.jsx";
 import {Hero} from "./Hero.jsx";
 import {NavBar} from "./NavBar";
@@ -8,12 +7,11 @@ import {Values} from "./Values.jsx";
 import {Projects} from "./Projects.jsx";
 
 export {
-    AboutMe,
     Experience,
     Footer,
     Hero,
     NavBar,
     Services,
     Values,
-Projects
+    Projects
 }

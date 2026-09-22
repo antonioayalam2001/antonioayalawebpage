@@ -118,53 +118,47 @@ export const technologies =
 export const navLinks = [
     {
         id: "home",
-        title: "Inicio",
+        titleKey: "nav.home",
     },
     {
-        id: "about",
-        title: "Acerca de mi",
+        id: "services",
+        titleKey: "nav.services",
     },
     {
-        id: "Services",
-        title: "Servicios",
+        id: "tech-stack",
+        titleKey: "nav.techStack",
     },
     {
-        id: "Technologies",
-        title: "Tecnologias",
+        id: "experience",
+        titleKey: "nav.experience",
+    },
+    {
+        id: "projects",
+        titleKey: "nav.projects",
     },
 ];
 
 export const socialMedia = [
     {
-        id: "social-media-1",
-        icon: instagram,
-        link: "https://www.instagram.com/tony_ayala01/",
+        id: "linkedin",
+        link: "https://linkedin.com/in/jose-antonio-mora-ayala",
+        iconName: "FiLinkedin",
     },
     {
-        id: "social-media-2",
-        icon: facebook,
-        link: "https://www.facebook.com/Tony.Ayala201/",
+        id: "github",
+        link: "https://github.com/antonioayalam2001",
+        iconName: "FiGithub",
     },
     {
-        id: "social-media-3",
-        icon: whatsapp,
-        link: "https://wa.me/15534645836",
+        id: "whatsapp",
+        link: "https://wa.me/525637646115",
+        iconName: "FiMessageCircle",
     },
     {
-        id: "social-media-4",
-        icon: mail,
+        id: "email",
         link: "mailto:antonioayalam2001@gmail.com",
+        iconName: "FiMail",
     },
-    // {
-    //     id: "social-media-3",
-    //     icon: twitter,
-    //     link: "https://www.twitter.com/",
-    // },
-    // {
-    //     id: "social-media-4",
-    //     icon: linkedin,
-    //     link: "https://www.linkedin.com/in/jos%C3%A9-antonio-mora-ayala-745a2a237/",
-    // },
 ];
 
 export const values = [

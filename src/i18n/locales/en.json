@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "techStack": "Stack",
+    "experience": "Experience",
+    "projects": "Projects"
+  },
+  "hero": {
+    "badge": "Available for freelance projects",
+    "greeting": "Hi, I'm",
+    "name": "Antonio Ayala.",
+    "role": "Fullstack Developer",
+    "description": "I'm passionate about solving complex problems through code. I build scalable architectures and intuitive interfaces, always focused on delivering real value and supporting your project's growth.",
+    "cta_primary": "View Services",
+    "cta_secondary": "Get in Touch"
+  },
+  "services": {
+    "label": "// services",
+    "title_pre": "System_",
+    "title_highlight": "Capabilities",
+    "subtitle": "Comprehensive tech solutions. Automation, scalability, and extreme performance.",
+    "items": [
+      {
+        "title": "Fullstack Web & Mobile",
+        "desc": "End-to-End development for Startups and Agencies. From conceptualization to production deployment, building scalable and high-performance applications."
+      },
+      {
+        "title": "Specialized Frontend",
+        "desc": "High-impact user experiences. Pixel-perfect interfaces with smooth animations, accessibility, and extreme Core Web Vitals optimization."
+      },
+      {
+        "title": "Backend & Cloud",
+        "desc": "Cloud architectures, relational and non-relational database design, and robust API integration (REST/GraphQL)."
+      }
+    ]
+  },
+  "techStack": {
+    "label": "/usr/bin/tech_stack",
+    "title": "Tech Arsenal"
+  },
+  "experience": {
+    "label": "// experience",
+    "title": "Experience & Education",
+    "items": [
+      {
+        "type": "work",
+        "period": "Oct 2024 – Present",
+        "title": "Frontend Team Lead",
+        "company": "Pro Meritum",
+        "badge": "Promoted Jan. 2026",
+        "highlights": [
+          "Leading a multidisciplinary team of 5 (Frontend + UX/UI)",
+          "V2 Architecture: Vue 2 → React migration with Feature-Sliced Design",
+          "AI integration in development workflows (Claude, Antigravity)",
+          "Designed and implemented an admin-managed RBAC system",
+          "Standardization with Husky, ESLint, Vitest, and React Testing Library"
+        ]
+      },
+      {
+        "type": "project",
+        "period": "2024",
+        "title": "Personal Finance Platform",
+        "company": "Personal Project",
+        "highlights": [
+          "Shared expense management with Next.js and NestJS",
+          "Data extraction pipeline from bank statement PDFs",
+          "Automatic debt and recurring charge assignment"
+        ]
+      },
+      {
+        "type": "project",
+        "period": "2024",
+        "title": "ESCOMIA — Thesis Project",
+        "company": "IPN ESCOM",
+        "highlights": [
+          "PWA for university procedure management",
+          "React, TanStack Query, Vite, Tailwind CSS, Shadcn UI",
+          "RESTful APIs with Express.js + OpenAI for moderation and chatbot"
+        ]
+      },
+      {
+        "type": "education",
+        "period": "2020 – 2024",
+        "title": "B.S. Computer Systems Engineering",
+        "company": "IPN — ESCOM",
+        "badge": "GPA 9.6 / 10",
+        "highlights": [
+          "Graduated with Academic Excellence distinction"
+        ]
+      },
+      {
+        "type": "education",
+        "period": "2017 – 2020",
+        "title": "Digital Graphic Design Technician",
+        "company": "IPN — CECyT No.2 \"Miguel Bernard\"",
+        "badge": "GPA 9.8 / 10",
+        "highlights": []
+      }
+    ]
+  },
+  "projects": {
+    "title": "System_Logs // Projects",
+    "recallio": {
+      "title": "Recallio",
+      "subtitle": "Collaborative Flashcard & Spaced Repetition Ecosystem",
+      "desc": "Versatile learning platform that allows users to master any subject through a Spaced Repetition System (SRS). It combines individual study with community collaboration: users can manage private decks or opt for public catalogs that evolve through admin-audited community suggestions.",
+      "challenge": "The biggest challenge was database modeling and state management to separate individual progress from public content. It was necessary to design a system to 'subscribe' to public flashcards, tracking the user's own memory algorithm (SM-2) and allowing edits strictly in their private environment.",
+      "arch_title": "Architecture & Solutions",
+      "arch": [
+        "Moderation Flows (NestJS): Robust API handling user roles and a review queue (drafts) ensuring public content quality.",
+        "Privacy Management (Prisma & PostgreSQL): Relational model separating public and personal content, tracking individual SM-2 progress.",
+        "Hybrid Frontend (Astro & React): Islands architecture with Astro for ultra-fast loading and React for complex interactivity.",
+        "Monorepo Infrastructure: Comprehensive management with pnpm workspaces and a standardized Docker environment."
+      ],
+      "stack_title": "Tech Stack",
+      "stack": ["Astro", "React", "NestJS", "PostgreSQL", "Docker", "Prisma", "RBAC"]
+    },
+    "terminal_user": "tonyayala@portfolio:~",
+    "cmd": "$ fetch projects --status",
+    "log_1": "[OK] Fetching repositories...",
+    "log_2": "[OK] Analyzing impact metrics...",
+    "log_warn": "[WARN] Access denied to recent projects.",
+    "nda_title": "Projects under NDA / In Development",
+    "nda_desc": "Currently working on private architectures for startups and updating my public portfolio with detailed case studies."
+  },
+  "footer": {
+    "tagline": "Robust architecture. Unforgettable interfaces.",
+    "rights": "All rights reserved."
+  },
+  "lang": {
+    "toggle": "ES"
+  }
+}

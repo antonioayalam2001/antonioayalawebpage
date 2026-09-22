@@ -1,33 +1,43 @@
-import styles from "../helpers/styleTailwind.js";
-import {logo} from "../assets/index.js";
-import {socialMedia} from "../helpers/constants.js";
+import { FiLinkedin, FiGithub, FiMessageCircle, FiMail } from "react-icons/fi";
+import { socialMedia } from "../helpers/constants.js";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+
+const iconMap = {
+    FiLinkedin: <FiLinkedin size={20} />,
+    FiGithub: <FiGithub size={20} />,
+    FiMessageCircle: <FiMessageCircle size={20} />,
+    FiMail: <FiMail size={20} />,
+};
 
 export const Footer = () => {
+    const { t } = useTranslation();
+
     return (
-        <footer className={` ${styles.flexCenter} ${styles.paddingY} flex-col`}>
-            <div className={` ${styles.flexCenter} md:flex-row flex-col mb-8 w-full`}>
-                <div className={'md:flex-[4] flex flex-col justify-center items-start md:justify-start md:mr-10'}>
-                    <img src={logo} alt="tony ayala" className={'w-[266px] h-[72px] object-contain'}/>
-                    <p className={` ${styles.paragraph} mt-4 max-w-[310px]`}>
-                        Podemos hacer multiples cosas juntos, ¿Tienes un proyecto en mente? 
-                        Contactame. <br />
-                        Página creada con ReactJs
-                    </p>
-                </div>
-
-
-                <div className="w-full md:flex-1 flex justify-between items-center md:flex-row flex-col pt-6 border-t-[1px] border-t-[#3F3E45]">
-                    <div className="flex flex-row md:mt-0 mt-6 justify-around w-[100%]">
-
-                        {socialMedia.map((social) => (
-                                <a href={social.link} key={social.id}
-                                   className={'cursor-pointer'}
-                                ><img src={social.icon} alt={social.id}/></a>
-                        ))}
-                    </div>
-                </div>
+        <footer className="w-full flex flex-col md:flex-row justify-between items-center py-10 z-10 relative">
+            <div className="flex flex-col mb-8 md:mb-0">
+                <h2 className="font-sans font-bold text-cyber-pink text-2xl tracking-widest uppercase mb-2">Tony<span className="text-white">_Ayala</span></h2>
+                <p className="text-gray-500 font-mono text-xs max-w-[310px]">
+                    {t('footer.tagline')}<br />
+                    © {new Date().getFullYear()} {t('footer.rights')}
+                </p>
             </div>
 
+            <div className="flex flex-row gap-4">
+                {socialMedia.map((social) => (
+                    <motion.a 
+                        href={social.link} 
+                        key={social.id}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-gray-500 hover:text-cyber-pink transition-colors p-2 border border-white/5 hover:border-cyber-pink/30 rounded-sm"
+                        whileHover={{ scale: 1.1, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        {iconMap[social.iconName]}
+                    </motion.a>
+                ))}
+            </div>
         </footer>
     );
-}
+};

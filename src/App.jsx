@@ -1,36 +1,29 @@
-import styles from "./helpers/styleTailwind.js";
-import {AboutMe, Experience, Footer, Hero, NavBar, Projects, Services, Values} from "./components/";
+import './i18n';
+import {Experience, Footer, Hero, NavBar, Projects, Services, Values} from "./components/";
+import { InteractiveEnvironment } from "./components/InteractiveEnvironment";
 
 function App() {
     return (
-        <div className="bg-primary w-full overflow-hidden">
-            <div className={` ${styles.paddingX} ${styles.flexCenter}`}>
-                <div className={` ${styles.boxWidth}`}>
+        <InteractiveEnvironment>
+            <div className="min-h-screen text-white font-sans overflow-hidden">
+                <div className="max-w-7xl mx-auto px-6 md:px-12">
                     <NavBar/>
                 </div>
-            </div>
 
-            {/*Hero Section*/}
-            <section className={`bg-primary ${styles.flexStart}`}>
-                <div className={` ${styles.boxWidth}`}>
+                <main className="max-w-7xl mx-auto px-6 md:px-12">
                     <Hero/>
-                </div>
-            </section>
-
-            {/* Contents section*/}
-            <section className={`bg-primary ${styles.flexStart} ${styles.paddingX}`}>
-                <div className={` ${styles.boxWidth}`}>
-                    <Values/>
                     <Services/>
-                    <AboutMe/>
+                    <Values/>
                     <Experience/>
                     <Projects/>
+                </main>
+
+                <div className="max-w-7xl mx-auto px-6 md:px-12 mt-16 border-t border-white/5 pt-8">
                     <Footer/>
                 </div>
-            </section>
-
-        </div>
+            </div>
+        </InteractiveEnvironment>
     )
 }
 
-export default App
+export default App;

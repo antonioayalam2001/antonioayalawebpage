@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "techStack": "Stack",
+    "experience": "Trayectoria",
+    "projects": "Proyectos"
+  },
+  "hero": {
+    "badge": "Disponible para proyectos freelance",
+    "greeting": "Hola, soy",
+    "name": "Antonio Ayala.",
+    "role": "Fullstack Developer",
+    "description": "Me apasiona resolver problemas complejos a través del código. Construyo arquitecturas escalables e interfaces intuitivas, siempre enfocado en aportar valor real y acompañar el crecimiento de tu proyecto.",
+    "cta_primary": "Ver Servicios",
+    "cta_secondary": "Contactar"
+  },
+  "services": {
+    "label": "// servicios",
+    "title_pre": "System_",
+    "title_highlight": "Capabilities",
+    "subtitle": "Soluciones tecnológicas integrales. Automatización, escalabilidad y rendimiento extremo.",
+    "items": [
+      {
+        "title": "Fullstack Web & Mobile",
+        "desc": "Desarrollo End-to-End para Startups y Agencias. Desde la conceptualización hasta el despliegue en producción, creando aplicaciones escalables y de alto rendimiento."
+      },
+      {
+        "title": "Frontend Especializado",
+        "desc": "Experiencias de usuario de alto impacto. Interfaces pixel-perfect con animaciones fluidas, accesibilidad y optimización extrema de Core Web Vitals."
+      },
+      {
+        "title": "Backend & Cloud",
+        "desc": "Arquitecturas en la nube, diseño de bases de datos relacionales y no relacionales, e integración con APIs robustas (REST/GraphQL)."
+      }
+    ]
+  },
+  "techStack": {
+    "label": "/usr/bin/tech_stack",
+    "title": "Arsenal Tecnológico"
+  },
+  "experience": {
+    "label": "// trayectoria",
+    "title": "Experiencia & Educación",
+    "items": [
+      {
+        "type": "work",
+        "period": "Oct 2024 – Presente",
+        "title": "Team Lead Frontend",
+        "company": "Pro Meritum",
+        "badge": "Promovido Ene. 2026",
+        "highlights": [
+          "Lidero equipo multidisciplinario de 5 personas (Frontend + UX/UI)",
+          "Arquitectura V2: migración Vue 2 → React con Feature-Sliced Design",
+          "Integración de IA en flujos de desarrollo (Claude, Antigravity)",
+          "Diseño e implementación de sistema RBAC administrable",
+          "Estandarización con Husky, ESLint, Vitest y React Testing Library"
+        ]
+      },
+      {
+        "type": "project",
+        "period": "2024",
+        "title": "Plataforma de Finanzas Personales",
+        "company": "Proyecto Personal",
+        "highlights": [
+          "Gestión de gastos compartidos con Next.js y NestJS",
+          "Pipeline de extracción de datos desde estados de cuenta PDF",
+          "Asignación automática de deudas y cargos recurrentes"
+        ]
+      },
+      {
+        "type": "project",
+        "period": "2024",
+        "title": "ESCOMIA — Proyecto de Titulación",
+        "company": "IPN ESCOM",
+        "highlights": [
+          "PWA para gestión de trámites universitarios",
+          "React, TanStack Query, Vite, Tailwind CSS, Shadcn UI",
+          "APIs RESTful con Express.js + OpenAI para moderación y chatbot"
+        ]
+      },
+      {
+        "type": "education",
+        "period": "2020 – 2024",
+        "title": "Ing. en Sistemas Computacionales",
+        "company": "IPN — ESCOM",
+        "badge": "Promedio 9.6 / 10",
+        "highlights": [
+          "Titulación por Excelencia Académica"
+        ]
+      },
+      {
+        "type": "education",
+        "period": "2017 – 2020",
+        "title": "Técnico en Diseño Gráfico Digital",
+        "company": "IPN — CECyT No.2 \"Miguel Bernard\"",
+        "badge": "Promedio 9.8 / 10",
+        "highlights": []
+      }
+    ]
+  },
+  "projects": {
+    "title": "System_Logs // Proyectos",
+    "recallio": {
+      "title": "Recallio",
+      "subtitle": "Ecosistema Colaborativo de Flashcards y Repetición Espaciada",
+      "desc": "Plataforma de aprendizaje versátil que permite dominar cualquier tema mediante un Sistema de Repetición Espaciada (SRS). Combina el estudio individual con la colaboración: los usuarios pueden gestionar mazos privados u optar por catálogos públicos que evolucionan gracias a sugerencias auditadas por administradores.",
+      "challenge": "El mayor desafío radicó en el modelado de la base de datos y la gestión del estado para separar el progreso individual del contenido público. Fue necesario diseñar un sistema para 'suscribirse' a flashcards públicas, rastreando su propio algoritmo de memoria (SM-2) y permitiendo ediciones en su entorno privado.",
+      "arch_title": "Arquitectura & Soluciones",
+      "arch": [
+        "Flujos de Moderación (NestJS): API robusta para roles y cola de revisión (drafts) garantizando la calidad del contenido público.",
+        "Gestión de Privacidad (Prisma & PostgreSQL): Modelo relacional que separa el contenido público del personal y vincula el algoritmo SM-2 individualmente.",
+        "Frontend Híbrido (Astro & React): Arquitectura de Islas con Astro para carga ultra rápida y React para interactividad compleja.",
+        "Infraestructura Monorepo: Gestión integral con pnpm workspaces y entorno estandarizado con Docker."
+      ],
+      "stack_title": "Stack Tecnológico",
+      "stack": ["Astro", "React", "NestJS", "PostgreSQL", "Docker", "Prisma", "RBAC"]
+    },
+    "terminal_user": "tonyayala@portfolio:~",
+    "cmd": "$ fetch projects --status",
+    "log_1": "[OK] Obteniendo repositorios...",
+    "log_2": "[OK] Analizando métricas de impacto...",
+    "log_warn": "[WARN] Acceso denegado a proyectos recientes.",
+    "nda_title": "Proyectos bajo NDA / En Desarrollo",
+    "nda_desc": "Actualmente estoy trabajando en arquitecturas privadas para startups y actualizando mi portafolio público con casos de estudio detallados."
+  },
+  "footer": {
+    "tagline": "Arquitectura robusta. Interfaces inolvidables.",
+    "rights": "Todos los derechos reservados."
+  },
+  "lang": {
+    "toggle": "EN"
+  }
+}

@@ -1,34 +1,87 @@
-import styles, {layout} from "../helpers/styleTailwind.js";
-import {services} from "../helpers/constants.js";
-import {ServiceCard} from "./ServiceCard.jsx";
+import { FiCode, FiLayers, FiDatabase } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const icons = [
+    <FiCode size={28} className="text-cyber-pink" />,
+    <FiLayers size={28} className="text-cyber-cyan" />,
+    <FiDatabase size={28} className="text-cyber-green" />,
+];
+
+const glowColors = [
+    "group-hover:shadow-[0_0_30px_rgba(255,16,240,0.25)] border-cyber-pink/20",
+    "group-hover:shadow-[0_0_30px_rgba(0,240,255,0.25)] border-cyber-cyan/20",
+    "group-hover:shadow-[0_0_30px_rgba(57,255,20,0.25)] border-cyber-green/20",
+];
 
 export const Services = () => {
-    return (
-        <section id={'Services'} className={` ${layout.section}`}>
+    const { t } = useTranslation();
+    const sectionRef = useRef(null);
+    const cardsRef = useRef([]);
 
-            {/*Left section (Info part)*/}
-            <div className={` ${layout.sectionInfo}`}>
-                <h2 className={` ${styles.heading2}`}>Mi aportación</h2>
-                <p className={` ${styles.paragraph} md:max-w-[470px] max-w-[100%] mt-6`}>
-                    Desde el inicio de mi <span className="italic text-golden"> aprendizaje como un freelancer y estudiante he estado mejorando mis habilidades tanto duras como blandas, las cuales me han permitido ganar experiencia en muchas areas de interes para mi </span>
-                    asi como el trabajo en equipo y la comunicación.
-                    <br /><br /><br />
-                    Todo el tiempo trato de mejorar en lo que realizo y siempre que tengo oportunidad analizo trabajos anteriores para aprender de mis errores y de ser posible rectificar y mejorarlos, durante mi tiempo de escuela he aprendido a interactuar con las personas y valorar a cada uno de los miembros de un equipo así como adaptarme.
-                    a las diferentes situaciones que se presentan en el día a día.
-                    <br /><br /><br />
-                    Ofrezco una amplia variedad de servicios que incluyen: <span className="italic text-golden"> programación web, sitios web estáticos responsivos, aplicaciones react, creación y consumo de API's así como programación y enseñanza
-                    en multiples lenguajes </span>, <span className="font-bold italic"> asi que aprovecha la oportunidad de conocerme y descubre que soy la persona correcta para tu proyecto... </span>
+    useEffect(() => {
+        const cards = cardsRef.current;
+        
+        gsap.fromTo(cards, 
+            { y: 60, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.7,
+                stagger: 0.15,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top 75%",
+                    toggleActions: "play reverse play reverse",
+                },
+            }
+        );
+
+        return () => ScrollTrigger.getAll().forEach(st => st.kill());
+    }, []);
+
+    const items = t('services.items', { returnObjects: true });
+
+    return (
+        <section id="services" ref={sectionRef} className="py-20 relative z-10">
+            <div className="mb-14">
+                <span className="font-mono text-cyber-pink text-xs uppercase tracking-widest mb-3 block">{t('services.label')}</span>
+                <h2 className="text-3xl md:text-5xl font-bold font-sans uppercase tracking-tight mb-4 flex items-center gap-4">
+                    <span className="w-10 h-1 bg-cyber-pink"></span>
+                    <span>{t('services.title_pre')}<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyber-pink to-cyber-cyan">{t('services.title_highlight')}</span></span>
+                </h2>
+                <p className="text-cyber-light font-mono text-base max-w-2xl">
+                    {t('services.subtitle')}
                 </p>
             </div>
 
-            {/*    Right Section (Services cards)*/}
-
-            <div className={` ${layout.sectionImg}  flex-col justify-between ss:py-8 gap-4`}>
-                {services.map((service) => (
-                    <ServiceCard key={service.id} {...service}/>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {items.map((service, index) => (
+                    <motion.div 
+                        key={index}
+                        ref={el => cardsRef.current[index] = el}
+                        className={`group glass-panel border p-7 relative overflow-hidden transition-all duration-500 hover:-translate-y-2 cursor-default ${glowColors[index]}`}
+                        whileHover={{ scale: 1.02 }}
+                    >
+                        <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/[0.02] rounded-full blur-2xl group-hover:bg-white/[0.06] transition-colors duration-500"></div>
+                        
+                        <div className="mb-5 bg-cyber-black w-14 h-14 rounded-lg flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-colors relative z-10">
+                            {icons[index]}
+                        </div>
+                        
+                        <h3 className="text-xl font-bold mb-3 font-sans tracking-wide relative z-10">{service.title}</h3>
+                        <p className="text-gray-400 leading-relaxed text-sm relative z-10">{service.desc}</p>
+                        
+                        <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-cyber-pink/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </motion.div>
                 ))}
             </div>
-
         </section>
     );
-}
+};
